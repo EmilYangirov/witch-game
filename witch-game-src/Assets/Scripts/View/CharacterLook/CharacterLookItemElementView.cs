@@ -26,5 +26,12 @@ namespace View.CharacterLook
 
             _renderer.sortingOrder = order;
         }
+
+        public void SetMaskVisibility(bool isVisibleInsideMask)
+        {
+            _renderer.maskInteraction = isVisibleInsideMask 
+                ? SpriteMaskInteraction.None 
+                : SpriteMaskInteraction.VisibleInsideMask;
+        }
     }
 }

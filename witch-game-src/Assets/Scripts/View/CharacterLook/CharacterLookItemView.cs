@@ -10,6 +10,11 @@ namespace View.CharacterLook
         {
             _elements = this.GetComponentsInChildren<CharacterLookItemElementView>();
         }
+
+        public void SetOrderingInLayer(int order)
+        {
+
+        }
     }
 }
 
