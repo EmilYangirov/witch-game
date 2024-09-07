@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      StoriesIcon_0: 6746072677993147084
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

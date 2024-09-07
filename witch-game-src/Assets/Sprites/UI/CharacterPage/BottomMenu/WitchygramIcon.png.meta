@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WitchygramIcon_0: 4123207074514578942
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
