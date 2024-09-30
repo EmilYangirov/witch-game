@@ -9,14 +9,10 @@ namespace View.UIElements
     {
         [SerializeField] private Sprite _disabledSprite;
         [SerializeField] private Sprite _enabledSprite;
-
         [SerializeField] private Image _icon;
-
-        private bool _isEnabled;
 
         private void Start()
         {
-            _isEnabled = false;
             SwitchSprite(_isEnabled);
         }
 
@@ -30,15 +26,15 @@ namespace View.UIElements
                 : _disabledSprite;
         }
 
-        protected override void OnClick()
+        public override void TurnOn()
         {
-            _isEnabled = !_isEnabled;
+            base.TurnOn();
             SwitchSprite(_isEnabled);
         }
 
-        public override void Disable()
+        public override void TurnOff()
         {
-            _isEnabled = false;
+            base.TurnOff();
             SwitchSprite(_isEnabled);
         }
     }

@@ -8,6 +8,6 @@ namespace Model.ScriptableObjects
     {
         public string Name;
         public List<ClothingItemType> ConflictTypes;
-        public int OrderInLayer;
+        public List<ClothingItemType> AheadTypes;
     }
 }

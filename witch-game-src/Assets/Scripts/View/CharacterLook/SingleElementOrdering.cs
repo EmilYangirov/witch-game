@@ -3,17 +3,16 @@ using UnityEngine;
 
 namespace View.CharacterLook
 {
-    public class CharacterLookItemElementView : MonoBehaviour
+    public class SingleElementOrdering : CharacterLookItemElementOrdering
     {
-        [SerializeField] private SpriteRenderer _renderer;
-        [SerializeField] private bool _isBackground;
+        [SerializeField] protected SpriteRenderer _renderer;
 
         private void OnValidate()
         {
             this.TryGetComponent(out _renderer);
         }
 
-        public void SetOrderingInLayer(int order)
+        public override void SetLookItemElementOrdering(int order)
         {
             if (_renderer == null)
             {
@@ -25,13 +24,6 @@ namespace View.CharacterLook
                 order = -order;
 
             _renderer.sortingOrder = order;
-        }
-
-        public void SetMaskVisibility(bool isVisibleInsideMask)
-        {
-            _renderer.maskInteraction = isVisibleInsideMask 
-                ? SpriteMaskInteraction.None 
-                : SpriteMaskInteraction.VisibleInsideMask;
         }
     }
 }

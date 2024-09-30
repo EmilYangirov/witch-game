@@ -22,6 +22,9 @@ namespace SharedKernel.Infrastructure.SaveSystem
         public async UniTask<T?> LoadAsync<T>(string key, CancellationToken cancellationToken)
         {
             var path = CreatePath(key);
+            if (!File.Exists(path))
+                return default;
+            
             using (var reader = new StreamReader(path))
             {
                 var json = await reader.ReadToEndAsync();

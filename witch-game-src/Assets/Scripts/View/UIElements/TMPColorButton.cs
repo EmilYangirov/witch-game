@@ -1,3 +1,4 @@
+using System;
 using SharedKernel.View.UIElements;
 using TMPro;
 using UnityEngine;
@@ -9,14 +10,27 @@ namespace View.UIElements
         [SerializeField] private TMP_Text _text;
         [SerializeField] private Color _disableColor;
         [SerializeField] private Color _enableColor;
-        protected override void OnClick()
+        
+        private void SwitchTextColor(bool isEnabled)
         {
-            throw new System.NotImplementedException();
+            if (_text == null)
+                throw new ArgumentNullException(nameof(_text));
+            
+            _text.color = isEnabled
+                ? _enableColor
+                :  _disableColor;
         }
 
-        public override void Disable()
+        public override void TurnOn()
         {
-            throw new System.NotImplementedException();
+            base.TurnOn();
+            SwitchTextColor(_isEnabled);
+        }
+
+        public override void TurnOff()
+        {
+            base.TurnOff();
+            SwitchTextColor(_isEnabled);
         }
     }
 }

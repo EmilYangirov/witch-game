@@ -23,7 +23,8 @@ namespace SharedKernel.View.UIElements
         [SerializeField] private float _elementsAxisPadding;
         [SerializeField] private bool _isAllowPartialElements;
 
-        [HideInInspector] [SerializeField] protected RectTransform[] _elements;
+        [HideInInspector] 
+        [SerializeField] protected RectTransform[] _elements;
 
 
         [SerializeField] private RectTransform _rectTransform;
@@ -97,11 +98,17 @@ namespace SharedKernel.View.UIElements
 
             var secondSidePosition = true switch
             {
-                _ when ElementAlignment == ElementAlignmentType.Upper =>
+                _ when ElementAlignment == ElementAlignmentType.Upper && !_isVertical =>
+                    _content.rect.height/2 - elementSize.Height/2,
+                _ when ElementAlignment == ElementAlignmentType.Center && !_isVertical =>
                     0,
-                _ when ElementAlignment == ElementAlignmentType.Center =>
+                _ when ElementAlignment == ElementAlignmentType.Bottom && !_isVertical =>
+                    -_content.rect.height/2 + elementSize.Height/2,
+                _ when ElementAlignment == ElementAlignmentType.Upper && _isVertical =>
+                    0,
+                _ when ElementAlignment == ElementAlignmentType.Center && _isVertical =>
                     -_content.rect.height / 2,
-                _ when ElementAlignment == ElementAlignmentType.Bottom =>
+                _ when ElementAlignment == ElementAlignmentType.Bottom && _isVertical =>
                     -_content.rect.height,
                 _ => 0
             };
@@ -124,8 +131,8 @@ namespace SharedKernel.View.UIElements
         private void SetContentSize(float mainSize)
         {
             _content.sizeDelta = _isVertical
-                ? new Vector2(_content.sizeDelta.x, mainSize)
-                : new Vector2(mainSize, _content.sizeDelta.y);
+                ? new Vector2(_rectTransform.sizeDelta.x, mainSize)
+                : new Vector2(mainSize, _rectTransform.sizeDelta.y);
         }
 
         protected virtual Vector2 GetContentBasePosition()
