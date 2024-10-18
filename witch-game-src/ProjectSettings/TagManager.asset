@@ -53,8 +53,14 @@ TagManager:
   - name: BodyBg
     uniqueID: 2752259617
     locked: 0
+  - name: RightLeg
+    uniqueID: 2387948665
+    locked: 0
   - name: Body
     uniqueID: 552002317
+    locked: 0
+  - name: LeftLeg
+    uniqueID: 145851993
     locked: 0
   - name: LeftArm
     uniqueID: 1234920257

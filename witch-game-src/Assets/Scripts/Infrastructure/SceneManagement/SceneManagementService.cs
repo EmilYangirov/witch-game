@@ -1,6 +1,5 @@
 using Cysharp.Threading.Tasks;
 using Infrastructure.EntryPoints;
-using Infrastructure.Root.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

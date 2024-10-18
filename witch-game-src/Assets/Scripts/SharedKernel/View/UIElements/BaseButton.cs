@@ -6,7 +6,8 @@ namespace SharedKernel.View.UIElements
 {
     public abstract class BaseButton : MonoBehaviour, IPointerClickHandler
     {
-        public Action<int> OnButtonClick;
+        public Action<int> OnButtonClickWithIdSending;
+        public Action OnButtonClick;
         [SerializeField] private bool _isCanTurnOffItself;
         
         protected bool _isEnabled;
@@ -16,7 +17,8 @@ namespace SharedKernel.View.UIElements
         public void OnPointerClick(PointerEventData eventData)
         {
             ChangeEnabledStatus();
-            OnButtonClick.Invoke(Id);
+            OnButtonClickWithIdSending.Invoke(Id);
+            OnButtonClick.Invoke();
         }
 
         private void Awake()

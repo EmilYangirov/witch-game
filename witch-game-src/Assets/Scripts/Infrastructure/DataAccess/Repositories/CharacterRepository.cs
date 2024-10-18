@@ -1,5 +1,6 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using Infrastructure.Services;
 using Model.Characters;
 using SharedKernel.Infrastructure.SaveSystem;
 
@@ -7,22 +8,33 @@ namespace Infrastructure.DataAccess.Repositories
 {
     public class CharacterRepository : ICharacterRepository
     {
+        private readonly ICharacterFactory _characterFactory;
         private readonly ISaveSystem _saveSystem;
-        private const string Key = "Character";
-        public CharacterRepository(ISaveSystem saveSystem)
+        private const string MainCharacterKey = "MainCharacter";
+        private Character _mainCharacter;
+
+        public CharacterRepository(ISaveSystem saveSystem, ICharacterFactory characterFactory)
         {
             _saveSystem = saveSystem;
+            _characterFactory = characterFactory;
         }
 
-        public async UniTask<Character?> GetCharacterAsync(CancellationToken cancellationToken)
+        private async void InitMainCharacter()
         {
-            var result = await _saveSystem.LoadAsync<Character>(Key, cancellationToken);
-            return result;
+            var token = new CancellationTokenSource();
+            var result = await GetCharacterAsync(token.Token);
+            _mainCharacter = result;
         }
 
-        public async UniTask UpdateCharacterAsync(Character character, CancellationToken cancellationToken)
+        public async UniTask<Character> GetCharacterAsync(CancellationToken cancellationToken)
         {
-            await _saveSystem.SaveAsync(Key, character, cancellationToken);
+            var result = await _saveSystem.LoadAsync<Character>(MainCharacterKey, cancellationToken);
+            return result ?? _characterFactory.CreateCharacter();
+        }
+
+        public async UniTask UpdateMainCharacterAsync(Character character, CancellationToken cancellationToken)
+        {
+            await _saveSystem.SaveAsync(MainCharacterKey, character, cancellationToken);
         }
     }
 }

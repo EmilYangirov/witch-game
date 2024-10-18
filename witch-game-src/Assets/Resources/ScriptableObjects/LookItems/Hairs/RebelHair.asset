@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a779a98a153048a587d724a4511f042f, type: 3}
+  m_Name: RebelHair
+  m_EditorClassIdentifier: 
+  Id: 85a75205-4ade-4368-b6fe-eb6f8fbe91b9
+  Name: Rebel's Hair
+  Icon: {fileID: 2985993883754522847, guid: f30ff35ad17171242ac54f0ce479b753, type: 3}
+  Type: 2
+  IsPurchasable: 0
+  BuyingStrategy:
+    Properties: {fileID: 0}
+    Price: 0
+  CanBeEquippedByAds: 0

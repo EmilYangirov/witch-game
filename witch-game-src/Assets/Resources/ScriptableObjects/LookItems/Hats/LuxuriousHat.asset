@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a779a98a153048a587d724a4511f042f, type: 3}
+  m_Name: LuxuriousHat
+  m_EditorClassIdentifier: 
+  Id: b5a151ce-8081-4bae-bcaf-15a66919922d
+  Name: Luxurious Hat
+  Icon: {fileID: 1535078722167424017, guid: 8a0d40ac1a46970469d5fbb76139b4a4, type: 3}
+  Type: 3
+  IsPurchasable: 0
+  BuyingStrategy:
+    Properties: {fileID: 0}
+    Price: 0
+  CanBeEquippedByAds: 0

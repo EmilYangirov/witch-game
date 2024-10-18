@@ -14,7 +14,9 @@ namespace Infrastructure.Installers
     {
         [Inject]
         public IObjectResolver diContainer;
-        [SerializeField] private List<MvvmCompliance> _mvvmCompliances;
+        
+        [SerializeField] 
+        private List<MvvmCompliance> _mvvmCompliances;
         
         public void OnValidate()
         {
@@ -25,8 +27,10 @@ namespace Infrastructure.Installers
                 if(_mvvmCompliances.Any(e => e.IsSameWith(item)))
                     continue;
                 
-                _mvvmCompliances.Add(new MvvmCompliance(item));
+                _mvvmCompliances.Add(new MvvmCompliance(item, item.ViewModel));
             }
+
+            _mvvmCompliances.RemoveAll(i => i.View == null || i.ViewModel == null);
         }
         
         public void CreateBindings()
@@ -50,9 +54,10 @@ namespace Infrastructure.Installers
         public Object View;
         public MonoScript ViewModel;
 
-        public MvvmCompliance(Object view)
+        public MvvmCompliance(Object view, MonoScript viewModel)
         {
             View = view;
+            ViewModel = viewModel;
         }
 
         public bool IsSameWith(Object compareView)

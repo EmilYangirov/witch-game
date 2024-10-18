@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a779a98a153048a587d724a4511f042f, type: 3}
+  m_Name: EnchantingHat
+  m_EditorClassIdentifier: 
+  Id: c24b5923-ffd9-456d-a99d-0a057dd1e544
+  Name: Enchanting Hat
+  Icon: {fileID: 7464053924386246813, guid: 80ba1c5fd04a8474aaba5ad462b93624, type: 3}
+  Type: 3
+  IsPurchasable: 0
+  BuyingStrategy:
+    Properties: {fileID: 0}
+    Price: 0
+  CanBeEquippedByAds: 0

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a779a98a153048a587d724a4511f042f, type: 3}
+  m_Name: MidnightQueenDress
+  m_EditorClassIdentifier: 
+  Id: ea296562-5940-43ef-8951-8fa297eea4e0
+  Name: Midnight Queen's Dress
+  Icon: {fileID: 3520216180556902116, guid: 63cd43e29ea12904194eb2f1eb3d6ea5, type: 3}
+  Type: 7
+  IsPurchasable: 0
+  BuyingStrategy:
+    Properties: {fileID: 0}
+    Price: 0
+  CanBeEquippedByAds: 0

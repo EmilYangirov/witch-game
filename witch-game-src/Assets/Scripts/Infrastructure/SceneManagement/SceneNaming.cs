@@ -1,4 +1,4 @@
-namespace Infrastructure.Root.SceneManagement
+namespace Infrastructure.SceneManagement
 {
     public static class SceneNaming
     {

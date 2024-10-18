@@ -93,7 +93,7 @@ namespace SharedKernel.View.UIElements
         {
             foreach (var button in _buttons)
             {
-                button.Value.OnButtonClick += OnRadioButtonClick;
+                button.Value.OnButtonClickWithIdSending += OnRadioButtonClick;
             }
         }
         
@@ -101,7 +101,7 @@ namespace SharedKernel.View.UIElements
         {
             foreach (var button in _buttons)
             {
-                button.Value.OnButtonClick -= OnRadioButtonClick;
+                button.Value.OnButtonClickWithIdSending -= OnRadioButtonClick;
             }
         }
     }

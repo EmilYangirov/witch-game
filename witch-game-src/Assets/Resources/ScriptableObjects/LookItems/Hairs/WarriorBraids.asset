@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a779a98a153048a587d724a4511f042f, type: 3}
+  m_Name: WarriorBraids
+  m_EditorClassIdentifier: 
+  Id: 81e41aa3-c5b4-4fae-bbb1-e0fa34b5d185
+  Name: Warrior Braids
+  Icon: {fileID: 4938164708768096460, guid: 92ab2b071f3847e4b8a76e078ed4036f, type: 3}
+  Type: 2
+  IsPurchasable: 0
+  BuyingStrategy:
+    Properties: {fileID: 0}
+    Price: 0
+  CanBeEquippedByAds: 0
